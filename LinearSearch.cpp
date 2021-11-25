@@ -1,21 +1,22 @@
 #include<iostream>
 using namespace std;
-int linearsearch(int r[] ,int akj ){
-    for (int i = 0; i < 10; i++){
-        if (r[i]==akj){
-            cout<<"Found at index "<< i << endl;
-            return -1;
-        }
-        else{
-            cout<<"Not Found";
-            return -1;
+int ls(int arra[10], int value){
+    for(int i=0; i<=10; i++){
+        if(arra[i]==value){
+            return i;
         }
     }
 }
 int main(){
-    int usersearch, arr[]={10,41,25,38,46,55,66,75,48,29};
-    cout<<"A Program to show how a linear search works (Integers)\nThe avilable integers are 10 , 41 , 25 , 38 , 46, 55 , 66 , 75 , 48 , 29\nEnter the integer to search for : ";
-    cin>>usersearch;
-    linearsearch(arr, usersearch);
-    return 0;
+    int arr[10]={11, 22, 33, 44, 55, 66, 77, 88, 99, 100}, user_val=0;
+    cout<<"Elements in array are : "<<endl<<"11, 22, 33, 44, 55, 66, 77, 88, 99, 100";
+    cout<<"Enter the number to check if present in array"<<endl;
+    cin>>user_val;
+    int temp = ls(arr, user_val);
+    if(temp<9 && temp>0){
+        cout<<"Position : "<<temp;
+    }
+    else{
+        cout<<"Not Found";
+    }
 }
